@@ -20,6 +20,10 @@ module.exports = {
                 loader: "source-map-loader"
             },
             {
+              test: /\.css$/,
+              use: [ 'style-loader', 'css-loader' ]
+            },
+            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     use: [
@@ -32,6 +36,17 @@ module.exports = {
                         "sass-loader"
                     ]
                 })
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                use: [
+                    {
+                      loader: 'file-loader',
+                      options: {
+                        name: '[path][name].[ext]'
+                      }  
+                    }
+                ]
             }
         ]
     },

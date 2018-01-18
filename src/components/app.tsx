@@ -1,4 +1,5 @@
 import * as React from "react";
+import 'typeface-roboto';
 
 export default class App extends React.Component<IProps, IState> {
   render() {
